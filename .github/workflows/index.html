@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Nexus</title>
+
+<style>
+body {
+    margin: 0;
+        font-family: Arial;
+            background: #0d0d0d;
+                color: white;
+                }
+
+                header {
+                    text-align: center;
+                        padding: 80px 20px;
+                        }
+
+                        h1 {
+                            font-size: 3rem;
+                            }
+
+                            .btn {
+                                background: #00ffcc;
+                                    color: black;
+                                        padding: 12px 20px;
+                                            border-radius: 8px;
+                                                cursor: pointer;
+                                                }
+
+                                                .section {
+                                                    padding: 40px 20px;
+                                                        text-align: center;
+                                                        }
+
+                                                        .card {
+                                                            background: #1a1a1a;
+                                                                padding: 20px;
+                                                                    margin: 15px;
+                                                                        border-radius: 10px;
+                                                                        }
+
+                                                                        input, textarea {
+                                                                            width: 80%;
+                                                                                padding: 10px;
+                                                                                    margin: 10px;
+                                                                                    }
+
+                                                                                    .tools {
+                                                                                        display: flex;
+                                                                                            flex-wrap: wrap;
+                                                                                                justify-content: center;
+                                                                                                }
+                                                                                                </style>
+                                                                                                </head>
+
+                                                                                                <body>
+
+                                                                                                <header>
+                                                                                                    <h1>AI Nexus 🚀</h1>
+                                                                                                        <p>Your All-in-One AI Tool Platform</p>
+                                                                                                            <button class="btn">Get Started</button>
+                                                                                                            </header>
+
+                                                                                                            <section class="section">
+                                                                                                                <h2>🔥 AI Tools</h2>
+                                                                                                                    
+                                                                                                                        <div class="tools">
+
+                                                                                                                                <div class="card">
+                                                                                                                                            <h3>Text Generator</h3>
+                                                                                                                                                        <textarea id="textInput" placeholder="Enter topic..."></textarea>
+                                                                                                                                                                    <button class="btn" onclick="generateText()">Generate</button>
+                                                                                                                                                                                <p id="textOutput"></p>
+                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                <div class="card">
+                                                                                                                                                                                                            <h3>Hashtag Generator</h3>
+                                                                                                                                                                                                                        <input id="hashInput" placeholder="Enter keyword">
+                                                                                                                                                                                                                                    <button class="btn" onclick="generateHash()">Generate</button>
+                                                                                                                                                                                                                                                <p id="hashOutput"></p>
+                                                                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                                                                                <div class="card">
+                                                                                                                                                                                                                                                                            <h3>Image Prompt</h3>
+                                                                                                                                                                                                                                                                                        <input id="imgInput" placeholder="Enter idea">
+                                                                                                                                                                                                                                                                                                    <button class="btn" onclick="generatePrompt()">Generate</button>
+                                                                                                                                                                                                                                                                                                                <p id="imgOutput"></p>
+                                                                                                                                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                            </section>
+
+                                                                                                                                                                                                                                                                                                                            <section class="section">
+                                                                                                                                                                                                                                                                                                                                <h2>💎 Pricing</h2>
+                                                                                                                                                                                                                                                                                                                                    <div class="card">
+                                                                                                                                                                                                                                                                                                                                            <h3>Free Plan</h3>
+                                                                                                                                                                                                                                                                                                                                                    <p>Basic AI tools</p>
+                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                            <div class="card">
+                                                                                                                                                                                                                                                                                                                                                                    <h3>Pro Plan</h3>
+                                                                                                                                                                                                                                                                                                                                                                            <p>Advanced AI features</p>
+                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                </section>
+
+                                                                                                                                                                                                                                                                                                                                                                                <section class="section">
+                                                                                                                                                                                                                                                                                                                                                                                    <h2>📩 Contact</h2>
+                                                                                                                                                                                                                                                                                                                                                                                        <input placeholder="Your Name">
+                                                                                                                                                                                                                                                                                                                                                                                            <input placeholder="Email">
+                                                                                                                                                                                                                                                                                                                                                                                                <textarea placeholder="Message"></textarea>
+                                                                                                                                                                                                                                                                                                                                                                                                    <button class="btn">Send</button>
+                                                                                                                                                                                                                                                                                                                                                                                                    </section>
+
+                                                                                                                                                                                                                                                                                                                                                                                                    <script>
+                                                                                                                                                                                                                                                                                                                                                                                                    function generateText() {
+                                                                                                                                                                                                                                                                                                                                                                                                        let input = document.getElementById("textInput").value;
+                                                                                                                                                                                                                                                                                                                                                                                                            document.getElementById("textOutput").innerText =
+                                                                                                                                                                                                                                                                                                                                                                                                                "AI Result: " + input + " is the future of technology 🚀";
+                                                                                                                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                function generateHash() {
+                                                                                                                                                                                                                                                                                                                                                                                                                    let input = document.getElementById("hashInput").value;
+                                                                                                                                                                                                                                                                                                                                                                                                                        document.getElementById("hashOutput").innerText =
+                                                                                                                                                                                                                                                                                                                                                                                                                            "#" + input + " #AI #Trending #Viral";
+                                                                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                            function generatePrompt() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                let input = document.getElementById("imgInput").value;
+                                                                                                                                                                                                                                                                                                                                                                                                                                    document.getElementById("imgOutput").innerText =
+                                                                                                                                                                                                                                                                                                                                                                                                                                        "Ultra realistic " + input + ", cinematic lighting, 8k";
+                                                                                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                                                                                        </script>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                        </html>

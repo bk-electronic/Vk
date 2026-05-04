@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Nexus Pro - Premium AI Platform</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #00ffcc;
+    --primary-dark: #00ccaa;
+    --secondary: #ff6b6b;
+    --accent: #4ecdc4;
+    --dark: #0d0d0d;
+    --darker: #0a0a0a;
+    --card-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --text: #ffffff;
+    --text-secondary: #b8c5d6;
+    --border: rgba(0, 255, 204, 0.2);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --glow: 0 0 20px rgba(0, 255, 204, 0.3);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 80%, rgba(0, 255, 204, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+header {
+    text-align: center;
+    padding: 120px 20px 80px;
+    background: linear-gradient(135deg, rgba(0, 255, 204, 0.1) 0%, rgba(0, 255, 204, 0.05) 100%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.5;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(0, 255, 204, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 20px rgba(0, 255, 204, 0.5); }
+    to { text-shadow: 0 0 30px rgba(0, 255, 204, 0.8), 0 0 40px rgba(0, 255, 204, 0.3); }
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--dark);
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--glow);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 255, 204, 0.4);
+    background: linear-gradient(135deg, var(--primary) 0%, #00ffdd 100%);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.section {
+    padding: 80px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 35px;
+    margin: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: all 0.4s ease;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card:hover {
+    border-color: rgba(0, 255, 204, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 255, 204, 0.2);
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card h3 i {
+    font-size: 1.4rem;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 14px 18px;
+    margin: 12px 0;
+    background: rgba(13, 13, 13, 0.8);
+    border: 2px solid #333;
+    border-radius: 10px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+    background: rgba(13, 13, 13, 0.9);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.model-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.model-btn {
+    padding: 8px 16px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.model-btn.active {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(0, 255, 204, 0.1);
+}
+
+.model-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.output {
+    background: rgba(13, 13, 13, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border-left: 4px solid var(--primary);
+    min-height: 60px;
+    display: none;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 255, 204, 0.1);
+}
+
+.output.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.price-card {
+    text-align: center;
+    position: relative;
+}
+
+.price-card.popular {
+    border-color: var(--primary);
+    box-shadow: 0 0 40px rgba(0, 255, 204, 0.3);
+}
+
+.price-card.popular::after {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--dark);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 20px 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.features {
+    text-align: left;
+    margin: 30px 0;
+}
+
+.features li {
+    margin: 12px 0;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.features li::before {
+    content: '✓';
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--darker);
+    border-top: 1px solid #333;
+    color: #666;
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        margin: 10px;
+        padding: 25px;
+    }
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+</style>
+</head>
+}
+
+.btn {
+    background: linear-gradient(135deg, #00ffcc 0%, #00ccaa 100%);
+    color: #000;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 255, 204, 0.5);
+    background: linear-gradient(135deg, #00ffcc 0%, #00ffdd 100%);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d44 100%);
+    padding: 30px;
+    margin: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    border-color: rgba(0, 255, 204, 0.5);
+    box-shadow: 0 12px 48px rgba(0, 255, 204, 0.2);
+    transform: translateY(-5px);
+}
+
+input, textarea {
+    width: 90%;
+    max-width: 500px;
+    padding: 12px;
+    margin: 10px auto;
+    background: #0d0d0d;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    display: block;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.pricing-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.price-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+}
+
+.price {
+    font-size: 2.5rem;
+    color: #00ffcc;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0a0a0a;
+    border-top: 1px solid #333;
+    color: #666;
+}
+
+.output {
+    background: #0d0d0d;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border-left: 3px solid #00ffcc;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚀 AI Nexus Pro</h1>
+    <p class="subtitle">The Most Advanced AI Platform with Premium Models & Tools</p>
+    <button class="btn" onclick="document.querySelector('.tools-section').scrollIntoView({behavior: 'smooth'})">
+        <i class="fas fa-rocket"></i> Start Creating
+    </button>
+</header>
+
+<section class="section">
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">50M+</div>
+            <div class="stat-label">AI Generations</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">1M+</div>
+            <div class="stat-label">Active Users</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Uptime</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">AI Models</div>
+        </div>
+    </div>
+</section>
+
+<section class="section tools-section">
+    <h2 class="section-title">🎯 Premium AI Tools</h2>
+
+    <div class="tools-grid">
+
+        <!-- Text Generation -->
+        <div class="card">
+            <h3><i class="fas fa-pen-fancy"></i> Advanced Text Generator</h3>
+            <div class="model-selector">
+                <button class="model-btn active" onclick="setModel(this, 'gpt4')">GPT-4</button>
+                <button class="model-btn" onclick="setModel(this, 'claude')">Claude</button>
+                <button class="model-btn" onclick="setModel(this, 'gemini')">Gemini</button>
+            </div>
+            <textarea id="textInput" placeholder="Enter your topic or prompt..."></textarea>
+            <button class="btn" onclick="generateText()">
+                <i class="fas fa-magic"></i> Generate Text
+            </button>
+            <div id="textOutput" class="output"></div>
+        </div>
+
+        <!-- Code Generator -->
+        <div class="card">
+            <h3><i class="fas fa-code"></i> Code Generator</h3>
+            <div class="model-selector">
+                <button class="model-btn active" onclick="setModel(this, 'codex')">Codex</button>
+                <button class="model-btn" onclick="setModel(this, 'copilot')">Copilot</button>
+            </div>
+            <textarea id="codeInput" placeholder="Describe the code you need..."></textarea>
+            <select id="languageSelect">
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="cpp">C++</option>
+                <option value="html">HTML/CSS</option>
+            </select>
+            <button class="btn" onclick="generateCode()">
+                <i class="fas fa-terminal"></i> Generate Code
+            </button>
+            <div id="codeOutput" class="output"></div>
+        </div>
+
+        <!-- Image Generation -->
+        <div class="card">
+            <h3><i class="fas fa-image"></i> AI Image Generator</h3>
+            <div class="model-selector">
+                <button class="model-btn active" onclick="setModel(this, 'dalle3')">DALL-E 3</button>
+                <button class="model-btn" onclick="setModel(this, 'midjourney')">Midjourney</button>
+                <button class="model-btn" onclick="setModel(this, 'stable')">Stable Diffusion</button>
+            </div>
+            <textarea id="imageInput" placeholder="Describe the image you want to create..."></textarea>
+            <select id="styleSelect">
+                <option value="realistic">Realistic</option>
+                <option value="artistic">Artistic</option>
+                <option value="anime">Anime</option>
+                <option value="abstract">Abstract</option>
+            </select>
+            <button class="btn" onclick="generateImage()">
+                <i class="fas fa-palette"></i> Generate Image
+            </button>
+            <div id="imageOutput" class="output"></div>
+        </div>
+
+        <!-- Translation -->
+        <div class="card">
+            <h3><i class="fas fa-language"></i> AI Translator</h3>
+            <div class="model-selector">
+                <button class="model-btn active" onclick="setModel(this, 'deepl')">DeepL</button>
+                <button class="model-btn" onclick="setModel(this, 'google')">Google</button>
+            </div>
+            <textarea id="translateInput" placeholder="Enter text to translate..."></textarea>
+            <select id="fromLang">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="hi">Hindi</option>
+            </select>
+            <select id="toLang">
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="hi">Hindi</option>
+                <option value="en">English</option>
+            </select>
+            <button class="btn" onclick="translateText()">
+                <i class="fas fa-exchange-alt"></i> Translate
+            </button>
+            <div id="translateOutput" class="output"></div>
+        </div>
+
+        <!-- Hashtag Generator -->
+        <div class="card">
+            <h3><i class="fas fa-hashtag"></i> Smart Hashtag Generator</h3>
+            <div class="model-selector">
+                <button class="model-btn active" onclick="setModel(this, 'smart')">Smart AI</button>
+                <button class="model-btn" onclick="setModel(this, 'trending')">Trending</button>
+            </div>
+            <input id="hashInput" placeholder="Enter keyword or topic" type="text">
+            <select id="platformSelect">
+                <option value="instagram">Instagram</option>
+                <option value="twitter">Twitter</option>
+                <option value="tiktok">TikTok</option>
+                <option value="linkedin">LinkedIn</option>
+            </select>
+            <button class="btn" onclick="generateHash()">
+                <i class="fas fa-tags"></i> Generate Hashtags
+            </button>
+            <div id="hashOutput" class="output"></div>
+        </div>
+
+        <!-- Content Summarizer -->
+        <div class="card">
+            <h3><i class="fas fa-compress-alt"></i> Content Summarizer</h3>
+            <div class="model-selector">
+                <button class="model-btn active" onclick="setModel(this, 'bert')">BERT</button>
+                <button class="model-btn" onclick="setModel(this, 't5')">T5</button>
+            </div>
+            <textarea id="summaryInput" placeholder="Paste your long text here..."></textarea>
+            <select id="summaryLength">
+                <option value="short">Short (1-2 sentences)</option>
+                <option value="medium">Medium (3-5 sentences)</option>
+                <option value="long">Long (detailed)</option>
+            </select>
+            <button class="btn" onclick="generateSummary()">
+                <i class="fas fa-file-alt"></i> Summarize
+            </button>
+            <div id="summaryOutput" class="output"></div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">💎 Premium Pricing</h2>
+    <div class="pricing-grid">
+        <div class="card price-card">
+            <h3>🚀 Starter</h3>
+            <div class="price">$0<span>/month</span></div>
+            <ul class="features">
+                <li>5 AI generations/day</li>
+                <li>Basic models only</li>
+                <li>Standard support</li>
+                <li>Watermarked outputs</li>
+            </ul>
+            <button class="btn">Get Started</button>
+        </div>
+
+        <div class="card price-card popular">
+            <h3>⭐ Professional</h3>
+            <div class="price">$29<span>/month</span></div>
+            <ul class="features">
+                <li>Unlimited generations</li>
+                <li>All premium models</li>
+                <li>Priority support</li>
+                <li>High-resolution outputs</li>
+                <li>API access</li>
+            </ul>
+            <button class="btn">Choose Pro</button>
+        </div>
+
+        <div class="card price-card">
+            <h3>🏢 Enterprise</h3>
+            <div class="price">Custom</div>
+            <ul class="features">
+                <li>Custom AI models</li>
+                <li>Dedicated support</li>
+                <li>White-label solution</li>
+                <li>Advanced analytics</li>
+                <li>SLA guarantee</li>
+            </ul>
+            <button class="btn">Contact Sales</button>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">📞 Contact Us</h2>
+    <div class="contact-form card">
+        <input id="contactName" placeholder="Your Name" type="text">
+        <input id="contactEmail" placeholder="Your Email" type="email">
+        <select id="contactSubject">
+            <option value="">Select Subject</option>
+            <option value="support">Technical Support</option>
+            <option value="billing">Billing</option>
+            <option value="enterprise">Enterprise Inquiry</option>
+            <option value="feedback">Feedback</option>
+        </select>
+        <textarea id="contactMsg" placeholder="Your Message"></textarea>
+        <button class="btn" onclick="sendMessage()">
+            <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 AI Nexus Pro. All rights reserved.</p>
+    <div>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Service</a>
+        <a href="#support">Support</a>
+    </div>
+</footer>
+
+<script>
+// Global variables
+let currentModels = {
+    text: 'gpt4',
+    code: 'codex',
+    image: 'dalle3',
+    translate: 'deepl',
+    hash: 'smart',
+    summary: 'bert'
+};
+
+function setModel(button, model) {
+    // Remove active class from siblings
+    const siblings = button.parentNode.children;
+    for (let sibling of siblings) {
+        sibling.classList.remove('active');
+    }
+    // Add active class to clicked button
+    button.classList.add('active');
+
+    // Update current model based on tool type
+    const toolType = button.closest('.card').querySelector('h3 i').className.split('-')[1];
+    currentModels[toolType] = model;
+}
+
+function showLoading(button) {
+    const originalText = button.innerHTML;
+    button.innerHTML = '<span class="loading"></span>Generating...';
+    button.disabled = true;
+    return originalText;
+}
+
+function hideLoading(button, originalText) {
+    button.innerHTML = originalText;
+    button.disabled = false;
+}
+
+function generateText() {
+    const input = document.getElementById('textInput').value.trim();
+    if (!input) {
+        alert('Please enter a topic!');
+        return;
+    }
+
+    const button = event.target;
+    const originalText = showLoading(button);
+
+    setTimeout(() => {
+        const output = document.getElementById('textOutput');
+        const model = currentModels.text;
+
+        let result = '';
+        switch(model) {
+            case 'gpt4':
+                result = `🚀 GPT-4 Result:\n\n${input} represents the cutting-edge of technological innovation. With advanced neural networks and deep learning capabilities, ${input} is transforming industries worldwide. The future holds limitless possibilities as AI continues to evolve and integrate seamlessly into our daily lives.`;
+                break;
+            case 'claude':
+                result = `🤖 Claude Result:\n\n${input} embodies the next generation of intelligent systems. Through sophisticated language models and ethical AI development, ${input} demonstrates how artificial intelligence can enhance human creativity and problem-solving capabilities.`;
+                break;
+            case 'gemini':
+                result = `💎 Gemini Result:\n\n${input} showcases the power of multimodal AI. Combining text, vision, and reasoning capabilities, ${input} opens new frontiers in how we interact with and understand complex information systems.`;
+                break;
+        }
+
+        output.innerText = result;
+        output.classList.add('show');
+        hideLoading(button, originalText);
+    }, 1500);
+}
+
+function generateCode() {
+    const input = document.getElementById('codeInput').value.trim();
+    const language = document.getElementById('languageSelect').value;
+
+    if (!input) {
+        alert('Please describe the code you need!');
+        return;
+    }
+
+    const button = event.target;
+    const originalText = showLoading(button);
+
+    setTimeout(() => {
+        const output = document.getElementById('codeOutput');
+        const model = currentModels.code;
+
+        let result = '';
+        switch(language) {
+            case 'javascript':
+                result = `// JavaScript function for ${input}\n\nfunction ${input.replace(/\s+/g, '')}() {\n    // Implementation\n    console.log('${input} executed successfully!');\n    return true;\n}`;
+                break;
+            case 'python':
+                result = `# Python function for ${input}\n\ndef ${input.replace(/\s+/g, '_').toLowerCase()}():\n    """${input} implementation"""\n    print("${input} executed successfully!")\n    return True`;
+                break;
+            case 'java':
+                result = `// Java class for ${input}\npublic class ${input.replace(/\s+/g, '')} {\n    public static void main(String[] args) {\n        System.out.println("${input} executed successfully!");\n    }\n}`;
+                break;
+            case 'cpp':
+                result = `// C++ function for ${input}\n#include <iostream>\n\nvoid ${input.replace(/\s+/g, '')}() {\n    std::cout << "${input} executed successfully!" << std::endl;\n}`;
+                break;
+            case 'html':
+                result = `<!-- HTML template for ${input} -->\n<!DOCTYPE html>\n<html>\n<head>\n    <title>${input}</title>\n</head>\n<body>\n    <h1>${input}</h1>\n    <p>Content for ${input}</p>\n</body>\n</html>`;
+                break;
+        }
+
+        output.innerHTML = `<pre><code>${result}</code></pre>`;
+        output.classList.add('show');
+        hideLoading(button, originalText);
+    }, 1200);
+}
+
+function generateImage() {
+    const input = document.getElementById('imageInput').value.trim();
+    const style = document.getElementById('styleSelect').value;
+
+    if (!input) {
+        alert('Please describe the image!');
+        return;
+    }
+
+    const button = event.target;
+    const originalText = showLoading(button);
+
+    setTimeout(() => {
+        const output = document.getElementById('imageOutput');
+        const model = currentModels.image;
+
+        let result = '';
+        switch(style) {
+            case 'realistic':
+                result = `🎨 Ultra-realistic ${input}, professional photography, 8K resolution, cinematic lighting, award-winning composition, sharp focus, vibrant colors, photorealistic details.`;
+                break;
+            case 'artistic':
+                result = `🖼️ Artistic ${input}, digital painting, vibrant colors, detailed brushwork, masterpiece quality, gallery-worthy, artistic composition.`;
+                break;
+            case 'anime':
+                result = `🎭 Anime-style ${input}, vibrant colors, detailed character design, studio quality, beautiful artwork, anime aesthetic.`;
+                break;
+            case 'abstract':
+                result = `🎨 Abstract ${input}, modern art, geometric shapes, vibrant colors, contemporary design, artistic expression.`;
+                break;
+        }
+
+        output.innerHTML = `<div style="text-align: center;"><div style="width: 200px; height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">AI Generated Image</div><p>${result}</p></div>`;
+        output.classList.add('show');
+        hideLoading(button, originalText);
+    }, 2000);
+}
+
+function translateText() {
+    const input = document.getElementById('translateInput').value.trim();
+    const fromLang = document.getElementById('fromLang').value;
+    const toLang = document.getElementById('toLang').value;
+
+    if (!input) {
+        alert('Please enter text to translate!');
+        return;
+    }
+
+    const button = event.target;
+    const originalText = showLoading(button);
+
+    setTimeout(() => {
+        const output = document.getElementById('translateOutput');
+        const model = currentModels.translate;
+
+        // Simple mock translations (in real app, this would call actual translation API)
+        const translations = {
+            'en-es': `${input} (Translated to Spanish)`,
+            'en-fr': `${input} (Traduit en français)`,
+            'en-de': `${input} (Übersetzt auf Deutsch)`,
+            'en-hi': `${input} (हिंदी में अनुवादित)`,
+            'es-en': `${input} (Translated to English)`,
+            'fr-en': `${input} (Translated to English)`,
+            'de-en': `${input} (Translated to English)`,
+            'hi-en': `${input} (Translated to English)`
+        };
+
+        const key = `${fromLang}-${toLang}`;
+        const result = translations[key] || `${input} (Translation not available for this language pair)`;
+
+        output.innerText = `🌍 Translation Result:\n\n${result}`;
+        output.classList.add('show');
+        hideLoading(button, originalText);
+    }, 1000);
+}
+
+function generateHash() {
+    const input = document.getElementById('hashInput').value.trim();
+    const platform = document.getElementById('platformSelect').value;
+
+    if (!input) {
+        alert('Please enter a keyword!');
+        return;
+    }
+
+    const button = event.target;
+    const originalText = showLoading(button);
+
+    setTimeout(() => {
+        const output = document.getElementById('hashOutput');
+        const model = currentModels.hash;
+
+        let hashtags = [];
+        switch(platform) {
+            case 'instagram':
+                hashtags = [`#${input}`, '#AI', '#Trending', '#Viral', '#Content', '#Digital', '#Innovation', '#Tech', '#Future', '#Creative'];
+                break;
+            case 'twitter':
+                hashtags = [`#${input}`, '#Twitter', '#SocialMedia', '#Discussion', '#News', '#TrendingNow', '#Viral', '#Share', '#Community'];
+                break;
+            case 'tiktok':
+                hashtags = [`#${input}`, '#TikTok', '#Viral', '#Dance', '#Music', '#Trending', '#FYP', '#ForYou', '#Challenge', '#Fun'];
+                break;
+            case 'linkedin':
+                hashtags = [`#${input}`, '#Professional', '#Business', '#Career', '#Networking', '#Leadership', '#Innovation', '#Technology', '#Growth'];
+                break;
+        }
+
+        output.innerHTML = `<div style="display: flex; flex-wrap: wrap; gap: 8px;">${hashtags.map(tag => `<span style="background: rgba(0,255,204,0.1); padding: 4px 8px; border-radius: 6px; color: #00ffcc;">${tag}</span>`).join('')}</div>`;
+        output.classList.add('show');
+        hideLoading(button, originalText);
+    }, 800);
+}
+
+function generateSummary() {
+    const input = document.getElementById('summaryInput').value.trim();
+    const length = document.getElementById('summaryLength').value;
+
+    if (!input) {
+        alert('Please enter text to summarize!');
+        return;
+    }
+
+    const button = event.target;
+    const originalText = showLoading(button);
+
+    setTimeout(() => {
+        const output = document.getElementById('summaryOutput');
+        const model = currentModels.summary;
+
+        let summary = '';
+        switch(length) {
+            case 'short':
+                summary = `This content discusses ${input.substring(0, 50)}... Key takeaway: Innovation and technology are transforming our world.`;
+                break;
+            case 'medium':
+                summary = `The provided content explores ${input.substring(0, 100)}... It highlights how modern technology and AI are revolutionizing industries. The main points include innovation, efficiency, and future possibilities.`;
+                break;
+            case 'long':
+                summary = `In-depth analysis of ${input.substring(0, 150)}... The content thoroughly examines technological advancements, their impact on society, implementation strategies, and future implications. Key themes include digital transformation, artificial intelligence applications, and the evolving landscape of modern technology.`;
+                break;
+        }
+
+        output.innerText = `📝 Summary:\n\n${summary}`;
+        output.classList.add('show');
+        hideLoading(button, originalText);
+    }, 1300);
+}
+
+function sendMessage() {
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const subject = document.getElementById('contactSubject').value;
+    const msg = document.getElementById('contactMsg').value.trim();
+
+    if (!name || !email || !msg || !subject) {
+        alert('Please fill all fields!');
+        return;
+    }
+
+    if (!email.includes('@')) {
+        alert('Please enter a valid email!');
+        return;
+    }
+
+    alert('✅ Message sent successfully! Our team will get back to you within 24 hours.');
+    document.getElementById('contactName').value = '';
+    document.getElementById('contactEmail').value = '';
+    document.getElementById('contactSubject').value = '';
+    document.getElementById('contactMsg').value = '';
+}
+
+// Smooth scrolling for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({behavior: 'smooth'});
+    });
+});
+
+// Add scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+});
+</script>
+
+</body>
+</html>

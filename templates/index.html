@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nexus - Professional AI SaaS Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1 class="logo">AI Nexus</h1>
+            <div id="usage">Usage: 0/10</div>
+            <nav>
+                <button class="nav-btn active" data-section="chat">💬 Chat</button>
+                <button class="nav-btn" data-section="text-gen">📝 Text Generator</button>
+                <button class="nav-btn" data-section="hashtags">🏷️ Hashtags</button>
+                <button class="nav-btn" data-section="image-prompt">🖼️ Image Prompt</button>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <section id="chat" class="section active">
+                <h2>AI Chat</h2>
+                <button id="clear-chat">Clear Chat</button>
+                <div class="chat-container">
+                    <div id="chat-messages" class="chat-messages"></div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" placeholder="Type your message..." />
+                        <button id="send-btn">Send</button>
+                    </div>
+                </div>
+            </section>
+            <section id="text-gen" class="section">
+                <h2>Text Generator</h2>
+                <div class="tool-container">
+                    <select id="tone-select">
+                        <option value="formal">Formal</option>
+                        <option value="casual">Casual</option>
+                        <option value="creative">Creative</option>
+                    </select>
+                    <input type="text" id="text-prompt" placeholder="Enter topic or prompt..." />
+                    <button id="generate-text-btn">Generate</button>
+                    <div id="text-output" class="output"></div>
+                </div>
+            </section>
+            <section id="hashtags" class="section">
+                <h2>Hashtag Generator</h2>
+                <div class="tool-container">
+                    <input type="text" id="hashtag-keyword" placeholder="Enter keyword..." />
+                    <button id="generate-hashtags-btn">Generate</button>
+                    <div id="hashtags-output" class="output"></div>
+                </div>
+            </section>
+            <section id="image-prompt" class="section">
+                <h2>Image Prompt Generator</h2>
+                <div class="tool-container">
+                    <input type="text" id="image-idea" placeholder="Enter idea..." />
+                    <button id="generate-image-prompt-btn">Generate</button>
+                    <div id="image-prompt-output" class="output"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
